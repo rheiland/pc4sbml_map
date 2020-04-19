@@ -1,1 +1,2 @@
-# pc4sbml_map
+# pc4cancerbots
+PhysiCell cancer biorobots example with Jupyter GUI

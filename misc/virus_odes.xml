@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model metaid="__main" id="__main">
+    <listOfParameters>
+      <parameter id="V" value="0.1" constant="false"/>
+      <parameter id="r_u" value="0.1" constant="true"/>
+      <parameter id="U" value="0.1" constant="false"/>
+      <parameter id="r_p" value="0.2" constant="true"/>
+      <parameter id="R" value="0.1" constant="false"/>
+      <parameter id="lambda_r" value="0.1" constant="true"/>
+      <parameter id="P" value="0.1" constant="false"/>
+      <parameter id="r_s" value="0.3" constant="true"/>
+      <parameter id="r_a" value="0.4" constant="true"/>
+      <parameter id="lambda_p" value="0.1" constant="true"/>
+      <parameter id="A" value="0.1" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <rateRule variable="V">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> r_u </ci>
+            </apply>
+            <ci> V </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="U">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> r_u </ci>
+              <ci> V </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> r_p </ci>
+              <ci> U </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="R">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> r_p </ci>
+              <ci> U </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> lambda_r </ci>
+              <ci> R </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="P">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> r_s </ci>
+                <ci> R </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> r_a </ci>
+                <ci> P </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> lambda_p </ci>
+              <ci> P </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="A">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> r_a </ci>
+            <ci> P </ci>
+          </apply>
+        </math>
+      </rateRule>
+    </listOfRules>
+  </model>
+</sbml>

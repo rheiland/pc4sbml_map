@@ -31,9 +31,11 @@ tab_height = 'auto'
 tab_layout = widgets.Layout(width='auto',height=tab_height, overflow_y='scroll',)   # border='2px solid black',
 #tab_layout = widgets.Layout(width='auto',height=tab_height,)   # border='2px solid black',
 #titles = ['About', 'Out: Cell Plots', 'Out: Substrate Plots']
-titles = ['About', 'PhysiCell-SBML mapping']
+#titles = ['About', 'PhysiCell-SBML mapping']
+titles = ['PhysiCell-SBML mapping']
 #tabs = widgets.Tab(children=[about_tab.tab, svg.tab, sub.tab],
-tabs = widgets.Tab(children=[about_tab.tab, mapping_tab.tab],
+#tabs = widgets.Tab(children=[about_tab.tab, mapping_tab.tab],
+tabs = widgets.Tab(children=[ mapping_tab.tab],
                    _titles={i: t for i, t in enumerate(titles)},
                    layout=tab_layout)
 

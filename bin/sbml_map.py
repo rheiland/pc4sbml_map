@@ -126,6 +126,7 @@ class SBMLTab(object):
     def fill_sbml_table(self):
         fname = os.path.join(".","data","Toy_Model_for_PhysiCell.xml")
         fname = os.path.join(".","data","virus_odes.xml")
+        fname = os.path.join(".","data","stacey_model1.xml")
         try:
             tree = ET.parse(fname)
             xml_root = tree.getroot()
@@ -155,7 +156,7 @@ class SBMLTab(object):
           sbml_list.append('----- parameters -----')
           for var in uep.findall('parameter'):
             # print('--- found param')
-            if var.attrib['constant'] == 'false':
+            if (not 'constant' in var.attrib.keys()) or (var.attrib['constant'] == 'false'):
                 param_name = var.attrib['id']
                 sbml_list.append(param_name)
 
